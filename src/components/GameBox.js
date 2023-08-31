@@ -1,27 +1,30 @@
-import React, { useState } from "react";
+import react from 'react';
+import { useState,createContext } from 'react';
+import { useGameBoardContext } from '../context/GameBoardContext';
 
-const GameBox = ({ boxNumber }) => {
+export const GameBox = ({boxNum}) => {
     const [isBlinking, setIsBlinking] = useState(false);
-
+    const {playerSequence,handlePlayerSequence } = useGameBoardContext();
     const blinkBox = () => {
         setIsBlinking(true);
-        setTimeout(() => setIsBlinking(false), 1000);
-    };
+        setTimeout(() => {
+            setIsBlinking(false);
+        },500);
+    }
+    
+    const handleClick = (boxNum) => {
+        blinkBox();
+        handlePlayerSequence(boxNum);
+    }
 
     const boxStyle = {
         backgroundColor: isBlinking ? "red" : "blue",
     };
 
-    return (
-        <div
-            className="bluebox"
-            id={boxNumber.toString()}
-            style={boxStyle}
-            onClick={blinkBox}
-        >
-            {boxNumber}
-        </div>
-    );
-};
 
-export default GameBox;
+    return (
+        <div style={boxStyle} className="gamebox" onClick={() => handleClick(boxNum)}>
+            {boxNum}
+        </div>
+    )
+}

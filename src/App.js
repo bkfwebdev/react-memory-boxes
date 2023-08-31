@@ -9,7 +9,7 @@ import Infobox from './components/InfoBox';
 import GameBoard from './components/GameBoard';
 import StartSequence from './components/StartSequence'
 import StatusBox from './components/StatusBox';
-
+import { GameBoardProvider } from './context/GameBoardContext';
 
 function App() {
 const [correct, setCorrect] = useState(0);
@@ -18,42 +18,19 @@ const [sequenceLength , setSequenceLength] = useState(3);
 const [computerSequence, setComputerSequence] = useState(null);
 const [playerSequence, setPlayerSequence] = useState(null);
 
-const randomUniqueNum = (range, outputCount) => {
-
-  let arr = []
-  for (let i = 1; i <= range; i++) {
-      arr.push(i)
-  }
-
-  let result = [];
-
-  for (let i = 1; i <= outputCount; i++) {
-      const random = Math.floor(Math.random() * (range - i));
-      result.push(arr[random]);
-      arr[random] = arr[range - i];
-  }
-
-  return result;
-}
-
-const gameReset = () => {}
-
 return (
   <ChakraProvider>
    <div className = "App">  
+   <GameBoardProvider>
   <VStack>
    <Header></Header>
    <Infobox></Infobox>
    <GameBoard></GameBoard>
-   <StartSequence></StartSequence>
    <StatusBox></StatusBox>
    </VStack>
+</GameBoardProvider>
    </div>
   </ChakraProvider>
 )
-
 }
-
-  
-
 export default App

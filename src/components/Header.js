@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
+import { useGameBoardContext } from "../context/GameBoardContext";
 
-const Header = () => {
-
+const Header = () => { 
     return (
-    <div id="header" className="flex-container">
-    <h1>Memory-Boxes</h1>
-    <p id="instruction-box">The computer will select a random sequence of boxes, you must click the boxes in the same sequence,click start to begin each sequence...</p>
-    </div>
+        <div id="header" class="flex-container">
+        <h1>Memory-Boxes</h1>
+        <p id="instruction-box">{userPrompt}</p>
+        </div>
     )
-}
+ }
 
-export default Header
+ export default Header;

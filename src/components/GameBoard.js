@@ -1,26 +1,19 @@
-import React from "react";
-import GameBox from './GameBox';
+import React from 'react';
+import { useState,createContext } from 'react';
+import { useGameBoardContext } from '../context/GameBoardContext';
+
+import './GameBox';
 
 const GameBoard = () => {
-    const rows = 3;
-    const columns = 3;
-    let boxes = [];
-
-    for (let row = 0; row < rows; row++) {
-        let rowBoxes = [];
-        for (let col = 0; col < columns; col++) {
-            const boxNumber = row * columns + col;
-            rowBoxes.push(<GameBox key={boxNumber} boxNumber={boxNumber} />);
-        }
-        boxes.push(<div key={row} className="row">{rowBoxes}</div>);
-    }
+    const gameBoxLabels = ['1','2','3','4','5','6','7','8','9'];
+    const {playerSequence,handlePlayerSequence } = useGameBoardContext();
+    
 
     return (
         <div className="gameboard">
-            {boxes}
+            {gameBoxLabels.map((boxNum) => (
+                <GameBox key={boxNum} boxNum={boxNum}/>
+            ))}
         </div>
-    );
+    )
 }
-
-export default GameBoard;
-
