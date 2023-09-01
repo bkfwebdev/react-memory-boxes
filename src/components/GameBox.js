@@ -23,8 +23,10 @@ export const GameBox = ({boxNum}) => {
 
 
     return (
-        <div style={boxStyle} className="gamebox" onClick={() => handleClick(boxNum)}>
+        <div style={boxStyle} className="bluebox" onClick={() => handleClick(boxNum)}>
             {boxNum}
         </div>
     )
 }
+
+export default GameBox;

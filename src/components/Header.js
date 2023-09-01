@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div id="header" class="flex-container">
         <h1>Memory-Boxes</h1>
-        <p id="instruction-box">{userPrompt}</p>
+        <p id="instruction-box">user prompt</p>
         </div>
     )
  }

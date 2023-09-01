@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState,createContext } from 'react';
 import { useGameBoardContext } from '../context/GameBoardContext';
+import GameBox from './GameBox';
 
 import './GameBox';
 
@@ -17,3 +18,5 @@ const GameBoard = () => {
         </div>
     )
 }
+
+export default GameBoard;

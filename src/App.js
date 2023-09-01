@@ -7,7 +7,6 @@ import {useState, useEffect} from 'react';
 import Header from './components/Header'
 import Infobox from './components/InfoBox';
 import GameBoard from './components/GameBoard';
-import StartSequence from './components/StartSequence'
 import StatusBox from './components/StatusBox';
 import { GameBoardProvider } from './context/GameBoardContext';
 

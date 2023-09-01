@@ -13,3 +13,5 @@ const StatusBox = () => {
     </div>
     )
 }
+
+export default StatusBox;

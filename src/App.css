@@ -46,7 +46,9 @@ h1 {
   font-family: Impact;
   font-size: 30px;
   color:wheat;
-  justify-content: center;
+  text-align: center;
+  line-height: 75px;
+
 }
 
 button {
